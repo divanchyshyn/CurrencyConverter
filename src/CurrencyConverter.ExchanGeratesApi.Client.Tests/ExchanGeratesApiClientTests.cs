@@ -1,20 +1,20 @@
 using System.Net;
 using System.Text.Json;
-using CurrencyConverter.CoinMarketCap.Client.Model;
+using CurrencyConverter.ExchanGeratesApi.Client.Model;
 using FluentAssertions;
 using Refit;
 using WireMock.RequestBuilders;
 using WireMock.ResponseBuilders;
 using WireMock.Server;
 
-namespace CurrencyConverter.CoinMarketCap.Client.Tests;
+namespace CurrencyConverter.ExchanGeratesApi.Client.Tests;
 
-public sealed class CoinMarketCapClientTests : IDisposable
+public sealed class ExchanGeratesApiClientTests : IDisposable
 {
     private readonly WireMockServer _server;
-    private readonly ICoinMarketCapClient _client;
+    private readonly IExchanGeratesApiClient _client;
 
-    public CoinMarketCapClientTests()
+    public ExchanGeratesApiClientTests()
     {
         _server = WireMockServer.Start();
 
@@ -28,13 +28,13 @@ public sealed class CoinMarketCapClientTests : IDisposable
         };
 
         _client = RestService
-            .For<ICoinMarketCapClient>($"{_server.Urls[0]}", refitSettings);
+            .For<IExchanGeratesApiClient>($"{_server.Urls[0]}", refitSettings);
     }
 
     [Fact]
-    public async Task Posts_UsedPaymentReferenceRequest()
+    public async Task GetsQuotes()
     {
-        MockGet("/v2/cryptocurrency/quotes/latest");
+        MockGet("/exchangerates_data/latest");
 
         Func<Task> action = async () =>
         {

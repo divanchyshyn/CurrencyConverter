@@ -1,17 +1,17 @@
 ﻿using System.Text.Json;
-using CurrencyConverter.CoinMarketCap.Client.Settings;
+using CurrencyConverter.ExchanGeratesApi.Client.Settings;
 using Microsoft.Extensions.DependencyInjection;
 using Refit;
 
-namespace CurrencyConverter.CoinMarketCap.Client.Extensions;
+namespace CurrencyConverter.ExchanGeratesApi.Client.Extensions;
 
-public static class CoinMarketCapExtensions
+public static class ExchanGeratesApiExtensions
 {
-    private const string ApiKeyHeader = "X-CMC_PRO_API_KEY";
+    private const string ApiKeyHeader = "apikey";
 
-    public static IServiceCollection AddCoinMarketCapClient(
+    public static IServiceCollection ExchanGeratesApiClient(
         this IServiceCollection services,
-        CoinMarketCapSettings coinMarketCapSettings)
+        ExchanGeratesApiSettings exchanGeratesApiSettings)
     {
         var refitSettings = new RefitSettings(
             new SystemTextJsonContentSerializer(
@@ -21,13 +21,13 @@ public static class CoinMarketCapExtensions
                 }));
 
 
-        services.AddRefitClient<ICoinMarketCapClient>(refitSettings)
+        services.AddRefitClient<IExchanGeratesApiClient>(refitSettings)
             .ConfigureHttpClient(client =>
             {
-                client.BaseAddress = new Uri(coinMarketCapSettings.BaseUrl);
+                client.BaseAddress = new Uri(exchanGeratesApiSettings.BaseUrl);
                 client.DefaultRequestHeaders.Add(
                     ApiKeyHeader,
-                    new[] { coinMarketCapSettings.ApiKey });
+                    new[] { exchanGeratesApiSettings.ApiKey });
             });
 
         return services;

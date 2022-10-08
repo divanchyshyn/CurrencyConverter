@@ -8,5 +8,5 @@ namespace CurrencyConverter.Application.Quotes.Queries.GetQuotes;
 public record GetQuotesQuery(Currency Currency) : IRequest<Result<QuotesDto>>, ICacheableQuery
 {
     public bool BypassCache  => false;
-    public string CacheKey => Currency;
+    public string CacheKey => $"{nameof(GetQuotesQuery)}-{Currency}";
 }

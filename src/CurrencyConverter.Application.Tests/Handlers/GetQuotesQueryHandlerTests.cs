@@ -2,8 +2,8 @@ using AutoFixture;
 using AutoFixture.AutoMoq;
 using CurrencyConverter.Application.Model;
 using CurrencyConverter.Application.Quotes.Queries.GetQuotes;
-using CurrencyConverter.CoinMarketCap.Client;
-using CurrencyConverter.CoinMarketCap.Client.Model;
+using CurrencyConverter.ExchanGeratesApi.Client;
+using CurrencyConverter.ExchanGeratesApi.Client.Model;
 using FluentAssertions;
 using Moq;
 
@@ -18,48 +18,41 @@ public class GetQuotesQueryHandlerTests
         var latestQuotesResponse = GetQuotes();
         var fixture = new Fixture();
         fixture.Customize(new AutoMoqCustomization());
-        var coinMarketCapClientMock = fixture.Freeze<Mock<ICoinMarketCapClient>>();
-        coinMarketCapClientMock.Setup(c => 
+        var coinMarketCapClientMock = fixture.Freeze<Mock<IExchanGeratesApiClient>>();
+        coinMarketCapClientMock.Setup(c =>
                 c.GetLatestQuotes(symbol, It.IsAny<string>(), CancellationToken.None))
             .ReturnsAsync(latestQuotesResponse);
         var handler = fixture.Create<GetQuotesQueryHandler>();
 
-        var result = await handler.Handle(new GetQuotesQuery(Currency.Bitcoin), CancellationToken.None);
+        var result = await handler.Handle(new GetQuotesQuery(
+            Currency.Create("BTC").Value),
+            CancellationToken.None);
 
         result.IsSuccess.Should().BeTrue();
         result.Value.Quotes.Should().HaveCount(5);
-        var quotes = latestQuotesResponse.Data.CryptoCurrencies.First().Quotes;
-        result.Value.Quotes.Should().Contain(q => q.Name == Currency.AustralianDollar 
-                                                  && q.Price == quotes.AustralianDollar.Price);
-        result.Value.Quotes.Should().Contain(q => q.Name == Currency.BrazilianReal 
-                                                  && q.Price == quotes.BrazilianReal.Price);
-        result.Value.Quotes.Should().Contain(q => q.Name == Currency.BritishPound 
-                                                  && q.Price == quotes.BritishPound.Price);
-        result.Value.Quotes.Should().Contain(q => q.Name == Currency.Euro 
-                                                  && q.Price == quotes.Euro.Price);
-        result.Value.Quotes.Should().Contain(q => q.Name == Currency.UnitedStatesDollar 
-                                                  && q.Price == quotes.UnitedStatesDollar.Price);
+        var quotes = latestQuotesResponse.Rates;
+        result.Value.Quotes.Should().Contain(q => q.Name == Currency.AustralianDollar
+                                                  && q.Price == quotes.AustralianDollar);
+        result.Value.Quotes.Should().Contain(q => q.Name == Currency.BrazilianReal
+                                                  && q.Price == quotes.BrazilianReal);
+        result.Value.Quotes.Should().Contain(q => q.Name == Currency.BritishPound
+                                                  && q.Price == quotes.BritishPound);
+        result.Value.Quotes.Should().Contain(q => q.Name == Currency.Euro
+                                                  && q.Price == quotes.Euro);
+        result.Value.Quotes.Should().Contain(q => q.Name == Currency.UnitedStatesDollar
+                                                  && q.Price == quotes.UnitedStatesDollar);
     }
 
     private static LatestQuotesResponse GetQuotes() =>
         new()
         {
-            Data = new Data
+            Rates = new ExchanGeratesApi.Client.Model.Quotes
             {
-                CryptoCurrencies = new[]
-                {
-                    new CryptoCurrency
-                    {
-                        Quotes = new CoinMarketCap.Client.Model.Quotes
-                        {
-                            AustralianDollar = new Quote { Price = 1m },
-                            UnitedStatesDollar = new Quote { Price = 2m },
-                            BrazilianReal = new Quote { Price = 3m },
-                            BritishPound = new Quote { Price = 4m },
-                            Euro = new Quote { Price = 5m },
-                        }
-                    }
-                }
+                AustralianDollar = 1m,
+                UnitedStatesDollar = 2m,
+                BrazilianReal = 3m,
+                BritishPound = 4m,
+                Euro = 5m
             }
         };
 }

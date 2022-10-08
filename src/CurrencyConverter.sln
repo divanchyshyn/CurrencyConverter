@@ -7,19 +7,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverter", "Curren
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverter.Application", "CurrencyConverter.Application\CurrencyConverter.Application.csproj", "{78E5374E-3DEC-4FA4-9C2A-2FEDFB894402}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverter.CoinMarketCap.Client", "CurrencyConverter.CoinMarketCap.Client\CurrencyConverter.CoinMarketCap.Client.csproj", "{F31137A4-A812-4C7B-B94A-E74517C705C7}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverter.Integration.Tests", "CurrencyConverter.Integration.Tests\CurrencyConverter.Integration.Tests.csproj", "{AA50F607-CEBE-47E4-88B6-583049BEE980}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverter.Application.Tests", "CurrencyConverter.Application.Tests\CurrencyConverter.Application.Tests.csproj", "{093ED8FB-E513-40D8-BD18-ABA9CF2C0AE1}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverter.CoinMarketCap.Client.Tests", "CurrencyConverter.CoinMarketCap.Client.Tests\CurrencyConverter.CoinMarketCap.Client.Tests.csproj", "{002D071A-6229-472F-B039-EE364A0D60EE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionIitems", "SolutionIitems", "{40558C10-4F28-4CCF-AF03-59D0403A3641}"
 	ProjectSection(SolutionItems) = preProject
 		..\.github\workflows\codeql-analysis.yml = ..\.github\workflows\codeql-analysis.yml
 		..\.github\workflows\dotnet.yml = ..\.github\workflows\dotnet.yml
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverter.ExchanGeratesApi.Client", "CurrencyConverter.ExchanGeratesApi.Client\CurrencyConverter.ExchanGeratesApi.Client.csproj", "{4F543EBA-5543-4D97-8690-C31F546334AE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverter.ExchanGeratesApi.Client.Tests", "CurrencyConverter.ExchanGeratesApi.Client.Tests\CurrencyConverter.ExchanGeratesApi.Client.Tests.csproj", "{38FB3AB3-0918-4A8F-9D6D-4748EC4DABD9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,6 @@ Global
 		{78E5374E-3DEC-4FA4-9C2A-2FEDFB894402}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78E5374E-3DEC-4FA4-9C2A-2FEDFB894402}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78E5374E-3DEC-4FA4-9C2A-2FEDFB894402}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F31137A4-A812-4C7B-B94A-E74517C705C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F31137A4-A812-4C7B-B94A-E74517C705C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F31137A4-A812-4C7B-B94A-E74517C705C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F31137A4-A812-4C7B-B94A-E74517C705C7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AA50F607-CEBE-47E4-88B6-583049BEE980}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AA50F607-CEBE-47E4-88B6-583049BEE980}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA50F607-CEBE-47E4-88B6-583049BEE980}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,10 +43,14 @@ Global
 		{093ED8FB-E513-40D8-BD18-ABA9CF2C0AE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{093ED8FB-E513-40D8-BD18-ABA9CF2C0AE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{093ED8FB-E513-40D8-BD18-ABA9CF2C0AE1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{002D071A-6229-472F-B039-EE364A0D60EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{002D071A-6229-472F-B039-EE364A0D60EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{002D071A-6229-472F-B039-EE364A0D60EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{002D071A-6229-472F-B039-EE364A0D60EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F543EBA-5543-4D97-8690-C31F546334AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F543EBA-5543-4D97-8690-C31F546334AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F543EBA-5543-4D97-8690-C31F546334AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F543EBA-5543-4D97-8690-C31F546334AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38FB3AB3-0918-4A8F-9D6D-4748EC4DABD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38FB3AB3-0918-4A8F-9D6D-4748EC4DABD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38FB3AB3-0918-4A8F-9D6D-4748EC4DABD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38FB3AB3-0918-4A8F-9D6D-4748EC4DABD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
