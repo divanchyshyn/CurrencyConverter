@@ -9,11 +9,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverter.Applicati
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverter.CoinMarketCap.Client", "CurrencyConverter.CoinMarketCap.Client\CurrencyConverter.CoinMarketCap.Client.csproj", "{F31137A4-A812-4C7B-B94A-E74517C705C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyConverter.Integration.Tests", "CurrencyConverter.Integration.Tests\CurrencyConverter.Integration.Tests.csproj", "{AA50F607-CEBE-47E4-88B6-583049BEE980}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverter.Integration.Tests", "CurrencyConverter.Integration.Tests\CurrencyConverter.Integration.Tests.csproj", "{AA50F607-CEBE-47E4-88B6-583049BEE980}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyConverter.Application.Tests", "CurrencyConverter.Application.Tests\CurrencyConverter.Application.Tests.csproj", "{093ED8FB-E513-40D8-BD18-ABA9CF2C0AE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverter.Application.Tests", "CurrencyConverter.Application.Tests\CurrencyConverter.Application.Tests.csproj", "{093ED8FB-E513-40D8-BD18-ABA9CF2C0AE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyConverter.CoinMarketCap.Client.Tests", "CurrencyConverter.CoinMarketCap.Client.Tests\CurrencyConverter.CoinMarketCap.Client.Tests.csproj", "{002D071A-6229-472F-B039-EE364A0D60EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverter.CoinMarketCap.Client.Tests", "CurrencyConverter.CoinMarketCap.Client.Tests\CurrencyConverter.CoinMarketCap.Client.Tests.csproj", "{002D071A-6229-472F-B039-EE364A0D60EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionIitems", "SolutionIitems", "{40558C10-4F28-4CCF-AF03-59D0403A3641}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\dotnet.yml = ..\.github\workflows\dotnet.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
