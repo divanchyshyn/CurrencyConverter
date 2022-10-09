@@ -34,7 +34,7 @@ public sealed class ExchangeRatesApiClientTests : IDisposable
     [Fact]
     public async Task GetsQuotes()
     {
-        MockGet("/ExchangeRates_data/latest");
+        MockGet("/exchangerates_data/latest");
 
         Func<Task> action = async () =>
         {

@@ -32,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CurrencyConverter.ExchanGeratesApi.Client\CurrencyConverter.ExchangeRatesApi.Client.csproj" />
+    <ProjectReference Include="..\CurrencyConverter.ExchangeRatesApi.Client\CurrencyConverter.ExchangeRatesApi.Client.csproj" />
   </ItemGroup>
 
 </Project>
