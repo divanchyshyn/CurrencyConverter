@@ -2,7 +2,7 @@
 [![.NET](https://github.com/divanchyshyn/CurrencyConverter/actions/workflows/dotnet.yml/badge.svg?branch=main)](https://github.com/divanchyshyn/CurrencyConverter/actions/workflows/dotnet.yml)
 [![CodeQL](https://github.com/divanchyshyn/CurrencyConverter/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/divanchyshyn/CurrencyConverter/actions/workflows/codeql-analysis.yml)
 
-.NET 6 based service that accepts a cryptocurrency code as an input. The application displaies its
+.NET 6 based service that accepts a cryptocurrency code as an input. The application displays its
 current quote in the following currencies:
 * USD
 * EUR
