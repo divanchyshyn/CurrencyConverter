@@ -41,7 +41,7 @@ It's a good assignment. It's not too big. It could be implemented in multiple di
 
 ## Please, describe yourself using JSON
 
-oh no, there was a connection issues. Details were not loaded properly! You have the chance to learn more during the interview :) 
+oh no, there was a connection issue. The details were not loaded properly! You have the chance to learn more during the interview :) 
 ```
 {
 	"person": {
