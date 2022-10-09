@@ -2,8 +2,8 @@ using System.Security.Claims;
 using CurrencyConverter.Application.Extensions;
 using CurrencyConverter.Application.Settings;
 using CurrencyConverter.Authorization;
-using CurrencyConverter.ExchanGeratesApi.Client.Extensions;
-using CurrencyConverter.ExchanGeratesApi.Client.Settings;
+using CurrencyConverter.ExchangeRatesApi.Client.Extensions;
+using CurrencyConverter.ExchangeRatesApi.Client.Settings;
 using CurrencyConverter.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
@@ -30,7 +30,7 @@ builder.Services
         o.AssumeDefaultVersionWhenUnspecified = true;
         o.ReportApiVersions = true;
     })
-    .ExchanGeratesApiClient(builder.GetSetting<ExchanGeratesApiSettings>())
+    .ExchangeRatesApiClient(builder.GetSetting<ExchangeRatesApiSettings>())
     .AddApplication(builder.GetSetting<CacheSettings>())
     .AddSwaggerGen(opt => 
         opt.UseLocalTokenProviderOptions(new[]  

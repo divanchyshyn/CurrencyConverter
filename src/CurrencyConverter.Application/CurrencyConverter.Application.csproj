@@ -26,8 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CurrencyConverter.CoinMarketCap.Client\CurrencyConverter.ExchanGeratesApi.Client.csproj" />
-    <ProjectReference Include="..\CurrencyConverter.ExchanGeratesApi.Client\CurrencyConverter.ExchanGeratesApi.Client.csproj" />
+    <ProjectReference Include="..\CurrencyConverter.ExchanGeratesApi.Client\CurrencyConverter.ExchangeRatesApi.Client.csproj" />
   </ItemGroup>
 
 </Project>

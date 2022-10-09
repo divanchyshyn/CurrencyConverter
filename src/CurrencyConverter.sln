@@ -13,13 +13,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverter.Applicati
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionIitems", "SolutionIitems", "{40558C10-4F28-4CCF-AF03-59D0403A3641}"
 	ProjectSection(SolutionItems) = preProject
+		..\Answers to technical questions.md = ..\Answers to technical questions.md
 		..\.github\workflows\codeql-analysis.yml = ..\.github\workflows\codeql-analysis.yml
 		..\.github\workflows\dotnet.yml = ..\.github\workflows\dotnet.yml
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverter.ExchanGeratesApi.Client", "CurrencyConverter.ExchanGeratesApi.Client\CurrencyConverter.ExchanGeratesApi.Client.csproj", "{4F543EBA-5543-4D97-8690-C31F546334AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverter.ExchangeRatesApi.Client", "CurrencyConverter.ExchanGeratesApi.Client\CurrencyConverter.ExchangeRatesApi.Client.csproj", "{4F543EBA-5543-4D97-8690-C31F546334AE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverter.ExchanGeratesApi.Client.Tests", "CurrencyConverter.ExchanGeratesApi.Client.Tests\CurrencyConverter.ExchanGeratesApi.Client.Tests.csproj", "{38FB3AB3-0918-4A8F-9D6D-4748EC4DABD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverter.ExchangeRatesApi.Client.Tests", "CurrencyConverter.ExchanGeratesApi.Client.Tests\CurrencyConverter.ExchangeRatesApi.Client.Tests.csproj", "{38FB3AB3-0918-4A8F-9D6D-4748EC4DABD9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

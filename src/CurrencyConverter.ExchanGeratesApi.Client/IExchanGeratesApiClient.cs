@@ -1,9 +1,9 @@
-﻿using CurrencyConverter.ExchanGeratesApi.Client.Model;
+﻿using CurrencyConverter.ExchangeRatesApi.Client.Model;
 using Refit;
 
-namespace CurrencyConverter.ExchanGeratesApi.Client;
+namespace CurrencyConverter.ExchangeRatesApi.Client;
 
-public interface IExchanGeratesApiClient
+public interface IExchangeRatesApiClient
 {
     [Get("/exchangerates_data/latest?symbols={symbols}&base={base}")]
     Task<LatestQuotesResponse> GetLatestQuotes(

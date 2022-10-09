@@ -1,20 +1,20 @@
 using System.Net;
 using System.Text.Json;
-using CurrencyConverter.ExchanGeratesApi.Client.Model;
+using CurrencyConverter.ExchangeRatesApi.Client.Model;
 using FluentAssertions;
 using Refit;
 using WireMock.RequestBuilders;
 using WireMock.ResponseBuilders;
 using WireMock.Server;
 
-namespace CurrencyConverter.ExchanGeratesApi.Client.Tests;
+namespace CurrencyConverter.ExchangeRatesApi.Client.Tests;
 
-public sealed class ExchanGeratesApiClientTests : IDisposable
+public sealed class ExchangeRatesApiClientTests : IDisposable
 {
     private readonly WireMockServer _server;
-    private readonly IExchanGeratesApiClient _client;
+    private readonly IExchangeRatesApiClient _client;
 
-    public ExchanGeratesApiClientTests()
+    public ExchangeRatesApiClientTests()
     {
         _server = WireMockServer.Start();
 
@@ -28,13 +28,13 @@ public sealed class ExchanGeratesApiClientTests : IDisposable
         };
 
         _client = RestService
-            .For<IExchanGeratesApiClient>($"{_server.Urls[0]}", refitSettings);
+            .For<IExchangeRatesApiClient>($"{_server.Urls[0]}", refitSettings);
     }
 
     [Fact]
     public async Task GetsQuotes()
     {
-        MockGet("/exchangerates_data/latest");
+        MockGet("/ExchangeRates_data/latest");
 
         Func<Task> action = async () =>
         {

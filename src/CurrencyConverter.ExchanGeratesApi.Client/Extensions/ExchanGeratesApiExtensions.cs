@@ -1,17 +1,17 @@
 ﻿using System.Text.Json;
-using CurrencyConverter.ExchanGeratesApi.Client.Settings;
+using CurrencyConverter.ExchangeRatesApi.Client.Settings;
 using Microsoft.Extensions.DependencyInjection;
 using Refit;
 
-namespace CurrencyConverter.ExchanGeratesApi.Client.Extensions;
+namespace CurrencyConverter.ExchangeRatesApi.Client.Extensions;
 
-public static class ExchanGeratesApiExtensions
+public static class ExchangeRatesApiExtensions
 {
     private const string ApiKeyHeader = "apikey";
 
-    public static IServiceCollection ExchanGeratesApiClient(
+    public static IServiceCollection ExchangeRatesApiClient(
         this IServiceCollection services,
-        ExchanGeratesApiSettings exchanGeratesApiSettings)
+        ExchangeRatesApiSettings exchangeRatesApiSettings)
     {
         var refitSettings = new RefitSettings(
             new SystemTextJsonContentSerializer(
@@ -21,13 +21,13 @@ public static class ExchanGeratesApiExtensions
                 }));
 
 
-        services.AddRefitClient<IExchanGeratesApiClient>(refitSettings)
+        services.AddRefitClient<IExchangeRatesApiClient>(refitSettings)
             .ConfigureHttpClient(client =>
             {
-                client.BaseAddress = new Uri(exchanGeratesApiSettings.BaseUrl);
+                client.BaseAddress = new Uri(exchangeRatesApiSettings.BaseUrl);
                 client.DefaultRequestHeaders.Add(
                     ApiKeyHeader,
-                    new[] { exchanGeratesApiSettings.ApiKey });
+                    new[] { exchangeRatesApiSettings.ApiKey });
             });
 
         return services;

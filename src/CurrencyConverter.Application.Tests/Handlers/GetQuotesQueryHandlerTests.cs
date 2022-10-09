@@ -2,8 +2,8 @@ using AutoFixture;
 using AutoFixture.AutoMoq;
 using CurrencyConverter.Application.Model;
 using CurrencyConverter.Application.Quotes.Queries.GetQuotes;
-using CurrencyConverter.ExchanGeratesApi.Client;
-using CurrencyConverter.ExchanGeratesApi.Client.Model;
+using CurrencyConverter.ExchangeRatesApi.Client;
+using CurrencyConverter.ExchangeRatesApi.Client.Model;
 using FluentAssertions;
 using Moq;
 
@@ -18,7 +18,7 @@ public class GetQuotesQueryHandlerTests
         var latestQuotesResponse = GetQuotes();
         var fixture = new Fixture();
         fixture.Customize(new AutoMoqCustomization());
-        var coinMarketCapClientMock = fixture.Freeze<Mock<IExchanGeratesApiClient>>();
+        var coinMarketCapClientMock = fixture.Freeze<Mock<IExchangeRatesApiClient>>();
         coinMarketCapClientMock.Setup(c =>
                 c.GetLatestQuotes(symbol, It.IsAny<string>(), CancellationToken.None))
             .ReturnsAsync(latestQuotesResponse);
@@ -46,7 +46,7 @@ public class GetQuotesQueryHandlerTests
     private static LatestQuotesResponse GetQuotes() =>
         new()
         {
-            Rates = new ExchanGeratesApi.Client.Model.Quotes
+            Rates = new ExchangeRatesApi.Client.Model.Quotes
             {
                 AustralianDollar = 1m,
                 UnitedStatesDollar = 2m,

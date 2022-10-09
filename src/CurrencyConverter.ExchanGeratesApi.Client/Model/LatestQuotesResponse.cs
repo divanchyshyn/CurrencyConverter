@@ -1,4 +1,4 @@
-﻿namespace CurrencyConverter.ExchanGeratesApi.Client.Model;
+﻿namespace CurrencyConverter.ExchangeRatesApi.Client.Model;
 
 public class LatestQuotesResponse
 {
